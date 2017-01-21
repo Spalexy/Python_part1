@@ -1,6 +1,6 @@
 # coding: utf-8
 
-_author_ = 'Alexander Pridacha'
+__author__ = 'Alexander Pridacha'
 
 # Задача-1: Дано произвольное целое число, вывести самую большую цифру этого числа.
 

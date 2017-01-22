@@ -74,6 +74,15 @@ print(day_dict[date[0]] + month_dict[date[1]] + date[2] + ' года')
 
 print('\n\nЗадача-3\n\n')
 
+from random import randint
+n = int(input('Введите количество элементов в списке: '))
+random_list = []
+
+while n > 0:
+    random_list.append(randint(-100, 100))
+    n = n - 1 
+
+print(random_list)
 
 
 # Задача-4: Дан список, заполненный произвольными целыми числами

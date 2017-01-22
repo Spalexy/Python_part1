@@ -74,13 +74,16 @@ print(day_dict[date[0]] + month_dict[date[1]] + date[2] + ' года')
 
 print('\n\nЗадача-3\n\n')
 
+
 from random import randint
 n = int(input('Введите количество элементов в списке: '))
 random_list = []
 
+
 while n > 0:
     random_list.append(randint(-100, 100))
     n = n - 1 
+
 
 print(random_list)
 
@@ -88,3 +91,23 @@ print(random_list)
 # Задача-4: Дан список, заполненный произвольными целыми числами
 # Получите новый список, элементами которого будут только уникальные элементы исходного
 # Например, lst = [1,2,4,5,6,2,5,2], нужно получить lst2 = [1,4,6]
+
+
+print('\n\nЗадача-4\n\n')
+
+
+list_1 = [2, 4, 2, 4, 17]
+list_2 = []
+
+# list_2 = set(list_1)
+# Пока не использую такое решение из-за простоты
+
+x = len(list_1)
+
+
+for i in list_1:
+        if i not in list_2:
+            list_2.append(i) 
+
+
+print(list_2)

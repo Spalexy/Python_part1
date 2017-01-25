@@ -25,20 +25,21 @@ def my_round(number, ndigits):
     if int(particles[1][ndigits]) >= 5: # определяем сторону округления
         x = 1
     if ndigits == 0:    # если 0, то округляем до целого
+        if int(particles[0]) < 0: # если число отрицательное, нужно вычитать 1 при округлении
+            x = -x
         number = int(particles[0]) + x
     else:               # иначе округляем до кол-ва знаков
         dig = (int(particles[1][ndigits - 1]) + x)
-        for i in particles[1]:
-            print(i)
+        fraction =  particles[1][0: ndigits - 1] + str(dig)
+        number = float(particles[0] + '.' + fraction)
 
     print('Результат округления: ', number)
         
 
 
 
-my_round(2.1234567, 5)
-my_round(2.1234567, 2)
-my_round(2.5234567, 0)
+my_round(-2.9236567, 0)
+
 
 
 

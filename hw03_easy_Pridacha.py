@@ -68,6 +68,27 @@ my_round(2.5236567, 3)
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 
-def lucky_ticket(ticket_number):
-    pass
+print('\n\nЗадача-2\n\n')
 
+
+def lucky_ticket(ticket_number):
+    """ Определяет счастливый билет.
+    Определить, является ли билет счастливым.
+    Билет считается счастливым, если сумма его первых и последних цифр равны.
+    """
+    ticket_number = str(ticket_number)
+    first_part = 0
+    second_part = 0
+    for i in range(3):
+        first_part = first_part + int(ticket_number[i])
+    for i in range(3, 6):
+        second_part = second_part + int(ticket_number[i])
+    if first_part == second_part:
+        return 'Билет счастливый'
+    else:
+        return 'Билет не счастливый'
+
+
+
+
+print(lucky_ticket(123321))

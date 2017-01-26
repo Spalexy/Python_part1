@@ -14,31 +14,49 @@ __author__ = 'Alexander Pridacha'
 print('\n\nЗадача-1\n\n')
 
 
+# def my_round(number, ndigits):
+#     """ Округляет десятичное число.
+#     Функция округляет полученное произвольное десятичное число
+#     до кол-ва знаков (кол-во знаков передается вторым аргументом)
+#     Округление происходит по математическим правилам.
+#     """
+#     particles = str(number).split('.')
+#     x = 0
+#     if int(particles[1][ndigits]) >= 5: # определяем сторону округления
+#         x = 1
+#     if ndigits == 0:    # если 0, то округляем до целого
+#         if int(particles[0]) < 0: # если число отрицательное, нужно вычитать 1 при округлении
+#             x = -x
+#         number = int(particles[0]) + x
+#     else:               # иначе округляем до кол-ва знаков
+#         dig = (int(particles[1][ndigits - 1]) + x)
+#         fraction =  particles[1][0: ndigits - 1] + str(dig)
+#         number = float(particles[0] + '.' + fraction)
+
+#     print('Результат округления: ', number)
+        
+# Решение без встроенных функций функций:
+
+
 def my_round(number, ndigits):
     """ Округляет десятичное число.
     Функция округляет полученное произвольное десятичное число
     до кол-ва знаков (кол-во знаков передается вторым аргументом)
     Округление происходит по математическим правилам.
     """
-    particles = str(number).split('.')
-    x = 0
-    if int(particles[1][ndigits]) >= 5: # определяем сторону округления
-        x = 1
-    if ndigits == 0:    # если 0, то округляем до целого
-        if int(particles[0]) < 0: # если число отрицательное, нужно вычитать 1 при округлении
-            x = -x
-        number = int(particles[0]) + x
-    else:               # иначе округляем до кол-ва знаков
-        dig = (int(particles[1][ndigits - 1]) + x)
-        fraction =  particles[1][0: ndigits - 1] + str(dig)
-        number = float(particles[0] + '.' + fraction)
+    if number >= 0:
+        x = 0.5
+    else:
+        x = -0.5
 
-    print('Результат округления: ', number)
-        
+    digits = 10 ** ndigits
+    round_number = (((number + (x / digits)) * digits) // 1) / digits
 
+    print(round_number)
 
+# не удалось добиться корректной работы с отрицательными числами 
 
-my_round(-2.9236567, 0)
+my_round(2.5236567, 3)
 
 
 

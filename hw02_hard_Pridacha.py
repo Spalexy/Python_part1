@@ -24,25 +24,31 @@ date = '01.11.1985'
 # Примеры некорректных дат
 date = '01.22.1001'
 date = '1.12.1001'
-date = '-2.07.2012'
+date = '2.07.2012'
 
 
 
 date = date.split('.')
 long_month = [1, 3, 5, 7, 8, 10, 12]
 short_month = [2, 4, 6, 9, 11]
-
-if len(date[0]) == 2 and len(date[1]) == 2 and len(date[2]) == 4:
-    if int(date[2]) in range(1,10000):
-        if int(date[1]) in long_month and int(date[0]) in range(1,32):
-            print('ок')
-        elif  int(date[1]) in short_month:
-            print('ок')
-else:
-    print('Дата некорректна')
+i = 1
 
 
-print(int(date[0]))
+while i == 1:
+    if len(date[0]) != 2 and len(date[1]) != 2 and len(date[2]) != 4:
+        break
+    elif int(date[2]) not in range(1,10000):
+        break
+    elif int(date[1]) not in long_month and int(date[0]) not in range(1,32):
+        break
+    elif  int(date[1]) not in short_month and int(date[0]) not in range(1,31):
+        break
+    else:
+        print('Дата корректна')
+    i = 0
+
+
+print('Дата некорректна')
 
 
 # Задание-3: "Перевернутая башня" (Задача олимпиадного уровня)
